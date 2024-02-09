@@ -1,0 +1,3 @@
+c2_client_binary_download_urls:
+  - https://github.com/BishopFox/sliver/releases/latest/download/sliver-client_linux
+  - https://github.com/BishopFox/sliver/releases/latest/download/sliver-client_windows.exe

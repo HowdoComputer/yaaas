@@ -1,0 +1,6 @@
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html#ansible-collections-ansible-builtin-template-module
+- name: Write pezor usage note to file
+  ansible.builtin.template:
+    src: "pezor-usage-example.txt.j2"
+    dest: "{{ other_downloads_and_things }}/pezor-usage-example.txt"
+    mode: '0644'

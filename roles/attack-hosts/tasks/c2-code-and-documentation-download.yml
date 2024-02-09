@@ -1,0 +1,15 @@
+- name: Get sliver github repo variables
+  ansible.builtin.include_vars:
+    file: vars/c2-sliver-github-repos.yml
+
+- name: Clone Sliver GitHub source repo and Wiki repo to C2-Frameworks
+  ansible.builtin.git:
+    repo: "{{ item }}"
+    dest: "{{ c2_framework_download_path }}/{{ item | regex_replace(_regex, _replace) }}"
+    clone: true
+    update: true
+  loop: "{{ sliver_c2_repos }}"
+  vars:
+    _regex: '(https:\/\/github\.com\/\S+\/)(\S+)(\.git)'
+    _replace: '\2'
+  # tags: tested

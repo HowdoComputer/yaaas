@@ -1,0 +1,7 @@
+- name: Download winpeas.bat from GitHub if it's missing or older than a week
+  ansible.builtin.get_url:
+    url: "https://github.com/carlospolop/PEASS-ng/releases/latest/download/winPEAS.bat"
+    dest: "{{ windows_tool_download_path }}/"
+    mode: '0755'
+    force: true
+  # tags: tested

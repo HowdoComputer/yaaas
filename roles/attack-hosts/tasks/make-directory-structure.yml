@@ -1,0 +1,36 @@
+# this will be ~{{ main_username }}/yaaas by default. Change in vars/global-vars.yml
+- name: Make main yaaas dir where yaaas saves tools. (root_install_path defined in vars/global-vars.yml)
+  ansible.builtin.file:
+    path: "{{ root_install_path }}"
+    state: directory
+    mode: '0755'
+- name: Make active directory dir
+  ansible.builtin.file:
+    path: "{{ active_directory_download_path }}"
+    state: directory
+    mode: '0755'
+- name: Make C2 framework dir
+  ansible.builtin.file:
+    path: "{{ c2_framework_download_path }}"
+    state: directory
+    mode: '0755'
+- name: Make Linux tool dir
+  ansible.builtin.file:
+    path: "{{ linux_tool_download_path }}"
+    state: directory
+    mode: '0755'
+- name: Make Windows tool dir
+  ansible.builtin.file:
+    path: "{{ windows_tool_download_path }}"
+    state: directory
+    mode: '0755'
+- name: Make csharp tools dir
+  ansible.builtin.file:
+    path: "{{ csharp_tools_source_code_repos }}"
+    state: directory
+    mode: '0755'
+- name: Make other downloads and things dir
+  ansible.builtin.file:
+    path: "{{ other_downloads_and_things }}"
+    state: directory
+    mode: '0755'

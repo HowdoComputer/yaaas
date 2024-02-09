@@ -1,0 +1,17 @@
+- name: Install sliver apt package
+  become: true
+  ansible.builtin.package:
+    name: sliver
+    state: latest
+  tags: tested
+
+- name: Check file attributes of the sliver-server_linux file
+  ansible.builtin.stat:
+    path: "{{ c2_framework_download_path }}/sliver-server_linux"
+  register: sliver_server_linux_stat
+
+- name: Download sliver-server_linux binary to C2-Frameworks
+  ansible.builtin.include_tasks: download-sliver-server-binary.yml
+  # `|float` is included in this comparison to typecast these variables as floats for the mathematical comparison with 604800.
+  # the 604800 value is the number of seconds in a week
+  when: (sliver_server_linux_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - sliver_server_linux_stat.stat.mtime|float) > 604800)

@@ -1,0 +1,8 @@
+- name: Configure localhost with attack-hosts and c2-servers roles
+  hosts: localhost
+  connection: local
+  vars_files:
+    - ./vars/global-vars.yml
+  roles:
+    - attack-hosts
+    - c2-servers

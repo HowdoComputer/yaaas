@@ -1,0 +1,35 @@
+- name: Install sliver apt package
+  become: true
+  ansible.builtin.package:
+    name: sliver
+    state: latest
+  tags: tested
+
+- name: Check file attributes of the sliver-client_linux file
+  ansible.builtin.stat:
+    path: "{{ c2_framework_download_path }}/sliver-client_linux"
+  register: sliver_client_linux_stat
+
+- name: Download sliver-client_linux binary to C2-Frameworks
+  ansible.builtin.include_tasks: download-sliver-client-binary.yml
+  # `|float` is included in this comparison to typecast these variables as floats for the mathematical comparison with 604800.
+  # the 604800 value is the number of seconds in a week
+  when: (sliver_client_linux_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - sliver_client_linux_stat.stat.mtime|float) > 604800)
+
+# - name: Download sliver-client_linux from GitHub if it's missing or older than a week
+  # ansible.builtin.get_url:
+    # url: "https://github.com/BishopFox/sliver/releases/latest/download/sliver-client_linux"  # Replace with the URL of the file you want to download
+    # dest: "{{ c2_framework_download_path }}/"
+    # force: yes
+  # # when: (sliver_client_linux_stat.stat.exists == "false") or ((ansible_date_time.epoch - sliver_client_linux_stat.stat.mtime) > 604800)
+  # when: (sliver_client_linux_stat.stat.mtime is not defined) or ((ansible_date_time.epoch - sliver_client_linux_stat.stat.mtime) > 604800)
+
+# - name: Download latest c2 clients for Linux from c2-client-binary-downloads.yml list
+  # include_vars:
+    # file: vars/c2-client-binary-downloads.yml
+  # fetch:
+    # src: "{{ item }}"
+    # dest: "{{ c2_framework_download_path }}"
+    # flat: yes
+  # loop:
+    # - "{{ c2_client_binary_download_urls }}"

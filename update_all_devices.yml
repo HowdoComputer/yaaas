@@ -1,0 +1,44 @@
+# https://opensource.com/article/20/10/ansible-modules-linux
+# This includes file list input:
+# https://stackoverflow.com/questions/71923103/install-packages-from-a-list-through-ansible
+
+- hosts: attack-hosts
+  gather_facts: true
+  tasks:
+    - command: awk '{print $1}' ./attack-host-packages.txt
+      debugger: always
+      register: _packages
+      delegate_to: localhost
+      run_once: true
+    - name: Install required packages
+      package:
+        debugger: on_failed
+        name: "{{ _packages.stdout_lines }}"
+        state: latest
+    - name: Start SSH, enable
+      service:
+        name: ssh
+        state: started
+        enabled: yes
+
+# https://linuxhandbook.com/clone-git-ansible/
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html
+# And trying out the iterating stuff from here:
+# https://stackoverflow.com/questions/46950632/ansible-copy-list-of-files-and-run-command-on-any-which-have-changed
+# - name: Clone git repos
+#   git:
+#     repo: "{{ item }}"
+#     dest: /path/to/put/it
+#   with_items:
+#     - # repo url 1
+#     - # repo url 2
+#     clone: yes
+#     update: yes
+
+# tldr -u needs to end up in here at some point
+# $(echo alias bat=batcat | tee -a ~/.bashrc)
+
+
+# https://stackoverflow.com/questions/1251999/how-can-i-replace-each-newline-n-with-a-space-using-sed
+# as described there, this is a better option:
+# tr '\n' ' ' < input_filename

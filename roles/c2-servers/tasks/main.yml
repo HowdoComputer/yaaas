@@ -1,0 +1,2 @@
+- name: Install C2 servers
+  ansible.builtin.include_tasks: c2-server-install.yml

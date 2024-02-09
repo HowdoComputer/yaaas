@@ -1,0 +1,15 @@
+# https://techviewleo.com/ansible-check-if-software-package-is-installed/
+- name: "Check if `tldr` is already installed"
+  ansible.builtin.package:
+    name: "tldr"
+    state: present
+  check_mode: true
+  register: tldr_check
+
+- name: "Print tldr check results"
+  ansible.builtin.debug:
+    msg: "tldr is installed"
+  when: tldr_check is succeeded
+
+- name: "Run tldr update with `tldr -u`"
+  ansible.builtin.command: "tldr -u"

@@ -1,0 +1,8 @@
+- name: Install docker.io and related packages
+  become: true
+  ansible.builtin.package:
+    name:
+      - docker.io
+      - docker-doc
+      - docker-compose
+    state: latest

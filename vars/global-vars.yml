@@ -1,0 +1,10 @@
+main_username: kali
+root_install_path: "~{{ main_username }}/yaaas-files"  # Home directory of main_username
+
+# Various directories for specific tooling and types of things
+active_directory_download_path: "{{ root_install_path }}/Active Directory"
+c2_framework_download_path: "{{ root_install_path }}/C2-Frameworks"
+linux_tool_download_path: "{{ root_install_path }}/Linux"
+windows_tool_download_path: "{{ root_install_path }}/Windows"
+csharp_tools_source_code_repos: "{{ root_install_path }}/csharp-tool-source-repos"
+other_downloads_and_things: "{{ root_install_path }}/other-uncategorized-stuff"

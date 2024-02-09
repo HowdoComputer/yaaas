@@ -1,0 +1,96 @@
+- name: Make directory structure used by YAAAS
+  ansible.builtin.include_tasks: make-directory-structure.yml
+
+- name: Update and upgrade apt packages
+  become: true
+  ansible.builtin.apt:
+    upgrade: true
+    update_cache: true
+    cache_valid_time: 86400 # One day
+  tags: tested
+
+- name: Get package variables
+  ansible.builtin.include_vars:
+    file: vars/packages.yml
+
+- name: Get github repo variables
+  ansible.builtin.include_vars:
+    file: vars/git-repos.yml
+
+- name: Install required packages
+  become: true
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ attack_host_packages }}"
+  tags: tested
+
+- name: Install and update tldr reference
+  ansible.builtin.include_tasks: tldr-update.yml
+
+# Data filtering references:
+# https://stackoverflow.com/questions/61473738/how-to-filter-trim-a-particular-variable-value-in-ansible
+# https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_filters.html#regular-expression-filters
+# https://regex101.com/
+# Started working on this regex to pull out the thing I want in a capture group:
+# https:\/\/github\.com\/\S+\/(\S+)\.git$
+# Three capture groups:
+# (https:\/\/github\.com\/\S+\/)(\S+)(\.git)$
+# Also ran into issues with the regex strings fighting with Ansible's variable expansion. It didn't like random escape characters in the string.
+# This Stackoverflow had the answer:
+# https://stackoverflow.com/questions/69111039/reassemble-multiple-capture-groups-from-ansible-regex-search
+- name: Clone GitHub repos
+  git:
+    repo: "{{ item }}"
+    dest: "{{ other_downloads_and_things }}/repos/{{ item | regex_replace(_regex, _replace) }}"
+    clone: true
+    update: true
+  loop: "{{ attack_host_github_repo_list }}"
+  vars:
+    _regex: '(https:\/\/github\.com\/\S+\/)(\S+)(\.git)'
+    _replace: '\2'
+  tags: tested
+
+- name: Install C2 clients
+  ansible.builtin.include_tasks: c2-client-install.yml
+
+- name: Download C2 source code and documentation
+  ansible.builtin.include_tasks: c2-code-and-documentation-download.yml
+
+- name: Check for and install PEASS tooling
+  ansible.builtin.include_tasks: peass-checks.yml
+
+# https://www.digitalocean.com/community/tutorials/how-to-use-ansible-to-install-and-set-up-docker-on-ubuntu-20-04
+- name: Install docker.io and related packages
+  become: true
+  ansible.builtin.package:
+    name:
+      - docker.io
+      - docker-doc
+      - docker-compose
+    state: latest
+
+- name: Add main user account to docker group
+  become: true
+  ansible.builtin.user:
+    name: "{{ main_username }}"
+    groups: docker
+    append: true
+
+# This doesn't require root, but at this stage in the process,
+# the user hasn't logged out and back in to refresh their group
+# membership, which was just changed in the previous task
+- name: Pull PEzor docker container image
+  become: true
+  community.docker.docker_image:
+    name: thekingofduck/pezor
+    source: pull
+
+- name: Manual sliver setup (install armory modules)
+  ansible.builtin.debug:
+    msg:
+      - "Okay, so unfortunately, there's some manual tasks that need to be done to finish our sliver setup:"
+      - "1. Please run `sudo sliver-server` in a terminal"
+      - "2. At the sliver server prompt, run `armory install all`. This will take some time to complete."
+      - "3. Close out of the sliver prompt with `exit`"
+      - "4. Run the "

@@ -1,0 +1,9 @@
+tool_binary_downloads:
+  - https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
+  - https://github.com/carlospolop/PEASS-ng/releases/latest/download/winPEAS.bat
+  - https://github.com/carlospolop/PEASS-ng/releases/latest/download/winPEASany.exe
+  # Just in case downloading the deb is the best way to install sublime...
+  # - https://download.sublimetext.com/sublime-text_build-3211_amd64.deb
+  - https://github.com/AlessandroZ/LaZagne/releases/latest/download/lazagne.exe
+  # LABEL THIS FIREFOX DECRYPT FOR PYTHON2???
+  # - https://github.com/unode/firefox_decrypt/archive/refs/tags/0.7.0.zip

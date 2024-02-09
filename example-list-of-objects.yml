@@ -1,0 +1,26 @@
+- name: Create a list of objects with three attributes
+  hosts: localhost
+  gather_facts: false
+  vars:
+    my_list_of_objects:
+      - name: Object1
+        attribute1: Value1
+        attribute2: Value2
+        attribute3: Value3
+      - name: Object2
+        attribute1: Value4
+        attribute2: Value5
+        attribute3: Value6
+      - name: Object3
+        attribute1: Value7
+        attribute2: Value8
+        attribute3: Value9
+
+  tasks:
+    - name: Print the list of objects
+      debug:
+        var: my_list_of_objects
+    # https://www.redhat.com/sysadmin/ansible-lists-dictionaries-yaml
+    - name: Print the third attribute of Object2
+      debug:
+        msg: "{{ my_list_of_objects | selectattr('name','equalto','Object2') | selectattr('attribute2') }}"
