@@ -27,6 +27,7 @@
 - [x] Add [Sherlock privesc PS1 repository](https://github.com/rasta-mouse/Sherlock.git) to github repos
 - [x] Add [Watson .NET repository](https://github.com/rasta-mouse/Watson.git) to github repos
 - [x] Add [SharpC2 repository](https://github.com/rasta-mouse/SharpC2.git) to github repos
+- [x] Alphabetize github repos by repo name
 - [ ] Download and install sublime
 - [ ] Download and install vscodium
 ~~- [ ] Download and install poetry crackmapexec. Ugh.~~
