@@ -1,4 +1,4 @@
-attack_hist_github_repo_list:
+attack_host_github_repo_list:
   - https://github.com/dirkjanm/adidnsdump.git
   - https://github.com/adrecon/ADRecon.git
   - https://github.com/V1V1/AIX-for-Penetration-Testers.git
