@@ -22,6 +22,7 @@ attack_host_packages:
   - jq
   - jxplorer
   - krb5-user
+  - lsd
   - metasploit-framework
   - mingw-w64
   - neo4j
