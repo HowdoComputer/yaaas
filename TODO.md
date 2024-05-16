@@ -10,7 +10,7 @@
 - [ ] Install sliver armory
   - [x] This is a difficult task. For now, just implementing instructions for the user to do this.
   - [ ] finish the message instructions
-  - [ ] Add post-sliver-setup.yml playbook to automate moving /root/.sliver-client to ~kali/.sliver-client ?
+  - [ ] Add post-sliver-setup.yml playbook to automate moving `/root/.sliver-client` to `{{ main_username }}` homedir
 - [x] Grab linpeas & winpeas
   - [x] Do check based on how old the last modified timestamp is?
 - [x] Figure out directory structure. Mimic kit2?
@@ -28,6 +28,10 @@
 - [x] Add [Watson .NET repository](https://github.com/rasta-mouse/Watson.git) to github repos
 - [x] Add [SharpC2 repository](https://github.com/rasta-mouse/SharpC2.git) to github repos
 - [x] Alphabetize github repos by repo name
+- [ ] Add `vim` to required packages list
+- [ ] Add check in `tldr-update.yml` to verify `~/.local/share/tldr` exists. Doesn't in WSL OOTB
+- [ ] Change `root_install_path` variable to be full path, no using `~`. Breaks in WSL OOTB
+- [ ] Troubleshoot / fix installing docker in WSL, if possible.
 - [ ] Download and install sublime
 - [ ] Download and install vscodium
 ~~- [ ] Download and install poetry crackmapexec. Ugh.~~
@@ -47,6 +51,32 @@
 - [ ] update searchsploit: `sudo searchsploit -u`
 - [ ] `sudo updatedb` toward the end of the changes
 - [ ] Adjust tldr-update.yml so the update task won't halt playbook if it fails
+
+## From existing Kali master image, create/verify
+- [ ] Create generic pentester user
+- [ ] Add pentester user to sudoers
+- [ ] Enable SSH service
+- [x] Add packages to packages.yml for attack box
+- [x] `btop`?
+- [x] `hollywood`?
+- [ ] Add github repos to git-repos.yml
+- [ ] Solve installing `Autorecon`
+  - [ ] Add AutoRecon.git to git repos
+  - [ ] pip install requirements.txt
+  - [ ] pip install AutoRecon dir
+- [ ] Binary downloads of:
+  - [ ] linpeas.sh
+  - [ ] winPEAS.bat
+  - [ ] winPEASany.exe
+  - [ ] kerbrute_linux_amd64
+  - [ ] kerbrute_linux_amd64.exe
+  - [ ] pspy64
+  - [ ] laxagne.exe
+  - [ ] lasagne.exe
+  - [ ] lazagne.exe
+  - [ ] linux-exploit-suggester.sh
+  - [ ] 
+- [ ] Compile Chisel from source?
 
 ## Extras, beyond MVP
 
