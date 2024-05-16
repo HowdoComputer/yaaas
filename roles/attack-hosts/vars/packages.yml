@@ -26,6 +26,7 @@ attack_host_packages:
   - hollywood
   - ipcalc
   - ipcalc-ng
+  - ipmitool
   - jq
   - jxplorer
   - krb5-user
@@ -59,6 +60,7 @@ attack_host_packages:
   - snmp-mibs-downloader
   - snmpcheck
   - snmpd
+  - ssh-audit
   - sshuttle
   - sshpass
   - sslscan
