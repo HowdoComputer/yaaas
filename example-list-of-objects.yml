@@ -18,9 +18,9 @@
 
   tasks:
     - name: Print the list of objects
-      debug:
+      ansible.builtin.debug:
         var: my_list_of_objects
     # https://www.redhat.com/sysadmin/ansible-lists-dictionaries-yaml
     - name: Print the third attribute of Object2
-      debug:
-        msg: "{{ my_list_of_objects | selectattr('name','equalto','Object2') | selectattr('attribute2') }}"
+      ansible.builtin.debug:
+        msg: "{{ my_list_of_objects | selectattr('name', 'equalto', 'Object2') | selectattr('attribute2') }}"
