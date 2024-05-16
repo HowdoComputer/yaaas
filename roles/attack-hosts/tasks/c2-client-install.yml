@@ -10,7 +10,7 @@
     path: "{{ c2_framework_download_path }}/sliver-client_linux"
   register: sliver_client_linux_stat
 
-- name: Download sliver-client_linux binary to C2-Frameworks
+- name: Check if sliver-client_linux binary exists or if 1 week old, download from GitHub
   ansible.builtin.include_tasks: download-sliver-client-binary.yml
   # `|float` is included in this comparison to typecast these variables as floats for the mathematical comparison with 604800.
   # the 604800 value is the number of seconds in a week
