@@ -30,9 +30,6 @@
 - [x] Add [SharpC2 repository](https://github.com/rasta-mouse/SharpC2.git) to github repos
 - [x] Alphabetize github repos by repo name
 - [x] Add `vim` to required packages list
-- [ ] Add check in `tldr-update.yml` to verify `~/.local/share/tldr` exists. Doesn't in WSL OOTB
-- [ ] Change `root_install_path` variable to be full path, no using `~`. Breaks in WSL OOTB
-- [ ] Troubleshoot / fix installing docker in WSL, if possible.
 - [ ] Create playbooks for creating custom users
   - [ ] Add variable for new users
   - [ ] Add variable for custom aliases
@@ -43,6 +40,7 @@
 - [ ] Download and install pipx and netexec (nxc)
 - [ ] Download and install autorecon
 - [ ] Enable installation of pip packages
+  - [ ] Install defaultcreds-cheat-sheet for each user account
 - [ ] Enable installation of pipx packages
 - [ ] Add installation of `nxc` through pipx
 - [ ] Enable installation of pypi packages
@@ -56,6 +54,11 @@
 - [ ] update searchsploit: `sudo searchsploit -u`
 - [ ] `sudo updatedb` toward the end of the changes
 - [ ] Adjust tldr-update.yml so the update task won't halt playbook if it fails
+
+## WSL compatibility
+- [ ] Troubleshoot / fix installing docker in WSL, if possible.
+- [ ] Add check in `tldr-update.yml` to verify `~/.local/share/tldr` exists. Doesn't in WSL OOTB
+- [ ] Change `root_install_path` variable to be full path, no using `~`. Breaks in WSL OOTB
 
 ## From existing Kali master image, create/verify
 - [ ] Create generic pentester user
