@@ -12,6 +12,7 @@ attack_host_github_repo_list:
   - https://github.com/cube0x0/CVE-2021-1675.git
   - https://github.com/arthepsy/CVE-2021-4034.git
   - https://github.com/NetSPI/DAFT.git
+  - https://github.com/ihebski/DefaultCreds-cheat-sheet.git
   - https://github.com/iagox86/dnscat2.git
   - https://github.com/lukebaggett/dnscat2-powershell.git
   - https://github.com/dafthack/DomainPasswordSpray.git
@@ -31,6 +32,7 @@ attack_host_github_repo_list:
   - https://github.com/ohpe/juicy-potato.git
   - https://github.com/ropnop/kerbrute.git
   - https://github.com/sosdave/KeyTabExtract.git
+  - https://github.com/AlessandroZ/LaZagne.git
   - https://github.com/rebootuser/LinEnum.git
   - https://github.com/TsukiCTF/Lovely-Potato.git
   - https://github.com/darkoperator/Metasploit-Plugins.git
