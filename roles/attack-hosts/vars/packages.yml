@@ -2,21 +2,28 @@ attack_host_packages:
   - apt-transport-https
   - assetfinder
   - bat
+  - btop
   - bloodhound
   - bloodhound.py
   - chromium
+  - cifs-utils
   - cisco7crack
   - crackmapexec
   - curl
+  - crunch
   - dnsrecon
   - enum4linux
+  - enum4linux-ng
+  - exploitdb
   - feroxbuster
   - ffuf
   - fping
   - freerdp2-x11
+  - git
   - gobuster
   - golang-go
   - htop
+  - hollywood
   - ipcalc
   - ipcalc-ng
   - jq
@@ -24,25 +31,48 @@ attack_host_packages:
   - krb5-user
   - metasploit-framework
   - mingw-w64
+  # - modbusclient
+  - nbtscan
   - neo4j
   - nginx
+  - nikto
   - nmap
+  - odat
+  - onesixtyone
+  - openvpn
+  - openssh-server
+  - oscanner
+  - powershell
+  - python3-pip
   - redis-tools
   - remmina
+  - responder
   - rlwrap
   - rpm2cpio
+  - samba
   - seclists
   - smbclient
   - smbmap
+  - smtp-user-enum
   - snmp
+  - snmp-mibs-downloader
+  - snmpcheck
+  - snmpd
   - sshuttle
   - sshpass
+  - sslscan
   - strace
   - subfinder
   - terminator
   - tilix
   - tldr
   - tmux
+  - vim
+  - w3m
+  - whatweb
   - wfuzz
+  - wordlists
   - xrdp
+  - xxd
   - yersinia
+  - zenity

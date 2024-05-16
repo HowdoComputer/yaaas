@@ -3,9 +3,11 @@ attack_host_github_repo_list:
   - https://github.com/adrecon/ADRecon.git
   - https://github.com/V1V1/AIX-for-Penetration-Testers.git
   - https://github.com/V1V1/AIX-for-Penetration-Testers.wiki.git
+  - https://github.com/Tib3rius/AutoRecon.git
   - https://github.com/tomnomnom/assetfinder.git
   - https://github.com/hmaverickadams/autoNTDS.git
   - https://github.com/NickstaDB/BaRMIe.git
+  - https://github.com/jpillora/chisel.git
   - https://github.com/galkan/crowbar.git
   - https://github.com/cube0x0/CVE-2021-1675.git
   - https://github.com/arthepsy/CVE-2021-4034.git
@@ -21,6 +23,7 @@ attack_host_github_repo_list:
   - https://github.com/BeichenDream/GodPotato.git
   - https://github.com/EspressoCake/HandleKatz_BOF.git
   - https://github.com/codewhitesec/HandleKatz.git
+  - https://github.com/arnaudsoullie/ics-default-passwords.git
   - https://github.com/SecureAuthCorp/Impacket.git
   - https://github.com/Kevin-Robertson/Inveigh.git
   - https://github.com/danielbohannon/Invoke-Obfuscation.git
@@ -31,6 +34,7 @@ attack_host_github_repo_list:
   - https://github.com/rebootuser/LinEnum.git
   - https://github.com/TsukiCTF/Lovely-Potato.git
   - https://github.com/darkoperator/Metasploit-Plugins.git
+  - https://github.com/Th3S3cr3tAg3nt/Munge.git
   - https://github.com/int0x33/nc.exe.git
   - https://github.com/Pennyw0rth/NetExec.git
   - https://github.com/Pennyw0rth/NetExec-wiki.git
@@ -38,6 +42,8 @@ attack_host_github_repo_list:
   - https://github.com/21y4d/nmapAutomator.git
   - https://github.com/vulnersCom/nmap-vulners.git
   - https://github.com/Ridter/noPac.git
+  - https://github.com/stealthsploit/OneRuleToRuleThemStill.git
+  - https://github.com/stealthsploit/Optimised-hashcat-Rule.git
   - https://github.com/swisskyrepo/PayloadsAllTheThings.git
   - https://github.com/Fincer/penetration-testing.git
   - https://github.com/PowerShellMafia/PowerSploit.git
