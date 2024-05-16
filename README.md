@@ -45,12 +45,16 @@ Inventory: ![hosts.ini](./hosts.ini) or ![hosts.yml](./hosts.yml). Set which one
 
 Global variables: ![./vars/global-vars.yml](./vars/global-vars.yml) has useful global variables defining things like your main username, destination directories, etc.
 
+### Creation of custom users
+
+TODO. Not yet implemented.
+
 ## Execution
 
 Do all the things.
 
 ```bash
-ansible-playbook runMe.yml
+ansible-playbook runMe.yml -i inventory/hosts.yaml
 ```
 
 ## Other useful snippets
