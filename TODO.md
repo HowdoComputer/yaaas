@@ -24,14 +24,19 @@
   - [ ] Write note file with pezor start syntax
 - [x] add sliver and sliver.wiki to GitHub list
 - [ ] Add `bat` alias for `batcat`
+  - [ ] Implement this as part of per-user customization
 - [x] Add [Sherlock privesc PS1 repository](https://github.com/rasta-mouse/Sherlock.git) to github repos
 - [x] Add [Watson .NET repository](https://github.com/rasta-mouse/Watson.git) to github repos
 - [x] Add [SharpC2 repository](https://github.com/rasta-mouse/SharpC2.git) to github repos
 - [x] Alphabetize github repos by repo name
-- [ ] Add `vim` to required packages list
+- [x] Add `vim` to required packages list
 - [ ] Add check in `tldr-update.yml` to verify `~/.local/share/tldr` exists. Doesn't in WSL OOTB
 - [ ] Change `root_install_path` variable to be full path, no using `~`. Breaks in WSL OOTB
 - [ ] Troubleshoot / fix installing docker in WSL, if possible.
+- [ ] Create playbooks for creating custom users
+  - [ ] Add variable for new users
+  - [ ] Add variable for custom aliases
+  - [ ] Add variable for custom environment variables
 - [ ] Download and install sublime
 - [ ] Download and install vscodium
 ~~- [ ] Download and install poetry crackmapexec. Ugh.~~
