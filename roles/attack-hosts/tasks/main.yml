@@ -61,14 +61,17 @@
   ansible.builtin.include_tasks: peass-checks.yml
 
 # https://www.digitalocean.com/community/tutorials/how-to-use-ansible-to-install-and-set-up-docker-on-ubuntu-20-04
-- name: Install docker.io and related packages
-  become: true
-  ansible.builtin.package:
-    name:
-      - docker.io
-      - docker-doc
-      - docker-compose
-    state: latest
+# - name: Install docker.io and related packages
+  # become: true
+  # ansible.builtin.package:
+    # name:
+      # - docker.io
+      # - docker-doc
+      # - docker-compose
+    # state: latest
+
+- name: Include Docker tasks
+  ansible.builtin.include_tasks: install-docker.yml
 
 - name: Add main user account to docker group
   become: true
@@ -85,6 +88,10 @@
   community.docker.docker_image:
     name: thekingofduck/pezor
     source: pull
+  tags: tested
+
+- name: Write file templates and notes to disk
+  ansible.builtin.include_tasks: templates/main.yml
 
 - name: Manual sliver setup (install armory modules)
   ansible.builtin.debug:
@@ -94,3 +101,7 @@
       - "2. At the sliver server prompt, run `armory install all`. This will take some time to complete."
       - "3. Close out of the sliver prompt with `exit`"
       - "4. Run the "
+
+# This feature isn't working yet. Commenting out for now.
+# - name: Set up custom users
+#   ansible.builtin.include_tasks: add-custom-users.yml

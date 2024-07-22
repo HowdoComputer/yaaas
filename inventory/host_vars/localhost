@@ -1,0 +1,22 @@
+---
+# These host variable files should be named after the
+# host or group that they should be applied to.
+ 
+################################
+### NEW CUSTOM USER ACCOUNTS ###
+################################
+# Generate your own password hashes with `mkpasswd` like so:
+# $ mkpasswd -m sha512crypt
+# This variable must be in dictionary format. Example here:
+new_user_accounts:
+  # yes, this is just 'password', don't use this
+  testAcccount: "$6$PTKMKj8rHDAKmeez$JOxzkvDBxfG/y37aqeWMCht2aaBzepD5LHXFQ3zroyVePdrpZ72hclgL.1BiCfQ3ZdrR7yM9h1mEj6bSIWjpy."
+
+####################
+### USER ALIASES ###
+####################
+
+
+##################################
+### USER ENVIRONMENT VARIABLES ###
+##################################

@@ -4,5 +4,7 @@
     name:
       - docker.io
       - docker-doc
-      - docker-compose
+      # This was just pulled out of Debian testing and Kali rolling
+      # Commenting it out for now.
+      #- docker-compose
     state: latest

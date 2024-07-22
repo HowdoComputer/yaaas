@@ -1,0 +1,32 @@
+---
+# This task registers the group membership of main_username
+# as a variable so each new user account is just as capable
+# as the default original account.
+- name: "Register group membership of {{ main_username }}"
+  # This command doesn't work as intended. Troubleshooting required.
+  ansible.builtin.command: "id -Gn {{ main_username }} | cut -d ' ' -f 2-"
+  register: main_username_group_membership_stdout
+
+- name: "Convert group membership to a list"
+  set_fact:
+    main_username_group_membership: "{{ main_username_group_membership_stdout.split() }}"
+
+- name: Print the extracted group names as a list
+  ansible.builtin.debug:
+    var: main_username_group_membership
+
+# When new_user_accounts is defined, ideally in
+# inventory/host_vars/[hostname-or-group]
+# This task will take a dictionary of a username and
+# a password hash and create that account
+- name: Create custom user accounts, home directories
+  become: true
+  ansible.builtin.user:
+    name: "{{ item.key }}"
+    password: "{{ item.value }}"
+    shell: "/bin/zsh"         # zsh by default
+    group: "{{ item.key }}"   # each user's primary group is just themselves
+    append: true              # if user exists, don't destroy old groups
+    groups: "{{ main_username_group_membership_csv }}"
+  loop: "{{ new_user_accounts | dict2items }}"
+  when: new_user_accounts is defined
