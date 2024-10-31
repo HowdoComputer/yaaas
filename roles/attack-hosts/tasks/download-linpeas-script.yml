@@ -4,4 +4,4 @@
     dest: "{{ linux_tool_download_path }}/"
     mode: '0755'
     force: true
-  # tags: tested
+  tags: tested
