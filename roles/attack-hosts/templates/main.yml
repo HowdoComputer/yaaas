@@ -2,5 +2,5 @@
 - name: Write pezor usage note to file
   ansible.builtin.template:
     src: "pezor-usage-example.txt.j2"
-    dest: "{{ other_downloads_and_things }}/pezor-usage-example.txt"
+    dest: "{{ root_install_path }}/pezor-usage-example.txt"
     mode: '0644'
