@@ -1,0 +1,7 @@
+- name: Download ankamali_hog from GitHub
+  ansible.builtin.get_url:
+    url: "{{ musl_ankamali_hog_zip_url }}"
+    dest: "{{ other_downloads_and_things }}/rustyhogs/zips/"
+    mode: '0755'
+    force: true
+  tags: tested

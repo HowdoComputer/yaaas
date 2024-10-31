@@ -40,7 +40,7 @@
 # This Stackoverflow had the answer:
 # https://stackoverflow.com/questions/69111039/reassemble-multiple-capture-groups-from-ansible-regex-search
 - name: Clone GitHub repos
-  git:
+  ansible.builtin.git:
     repo: "{{ item }}"
     dest: "{{ other_downloads_and_things }}/repos/{{ item | regex_replace(_regex, _replace) }}"
     clone: true
@@ -59,6 +59,9 @@
 
 - name: Check for and install PEASS tooling
   ansible.builtin.include_tasks: peass-checks.yml
+
+- name: Check for and download Rusty Hogs tooling
+  ansible.builtin.include_tasks: rusty-hogs-checks.yml
 
 # https://www.digitalocean.com/community/tutorials/how-to-use-ansible-to-install-and-set-up-docker-on-ubuntu-20-04
 # - name: Install docker.io and related packages

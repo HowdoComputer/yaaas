@@ -1,0 +1,25 @@
+musl_ankamali_hog_zip_url: "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-ankamali_hog-1.0.11.zip"
+
+musl_berkshire_hog_zip_url: "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-berkshire_hog-1.0.11.zip"
+
+musl_choctaw_hog_zip_url: "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-choctaw_hog-1.0.11.zip"
+
+musl_duroc_hog_zip_url: "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-duroc_hog-1.0.11.zip"
+
+musl_essex_hog_zip_url: "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-essex_hog-1.0.11.zip"
+
+musl_gottingen_hog_zip_url: "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-gottingen_hog-1.0.11.zip"
+
+musl_hante_hog_zip_url: "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-hante_hog-1.0.11.zip"
+
+rustyhogs_scripts_zip_url: "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-scripts_1.0.11.zip"
+
+rustyhogs_all_zip_urls:
+- "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-ankamali_hog-1.0.11.zip"
+- "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-berkshire_hog-1.0.11.zip"
+- "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-choctaw_hog-1.0.11.zip"
+- "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-duroc_hog-1.0.11.zip"
+- "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-essex_hog-1.0.11.zip"
+- "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-gottingen_hog-1.0.11.zip"
+- "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-hante_hog-1.0.11.zip"
+- "https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-scripts_1.0.11.zip"

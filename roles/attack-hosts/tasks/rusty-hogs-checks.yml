@@ -1,0 +1,115 @@
+- name: Get rusty-hogs variables
+  ansible.builtin.include_vars:
+    file: vars/rusty-hogs-zips.yml
+
+- name: Confirm {{ other_downloads_and_things }}/rustyhogs directory exists
+  ansible.builtin.file:
+    path: "{{ other_downloads_and_things }}"
+    state: directory
+    mode: '0755'
+
+- name: Confirm {{ other_downloads_and_things }}/rustyhogs/zips directory exists
+  ansible.builtin.file:
+    path: "{{ other_downloads_and_things }}/rustyhogs/zips"
+    state: directory
+    mode: '0755'
+
+- name: Check file attributes of the ankamali_hog_zip file
+  ansible.builtin.stat:
+    # Example URL
+    # https://github.com/newrelic/rusty-hog/releases/download/v1.0.11/rustyhogs-musl-ankamali_hog-1.0.11.zip
+    path: "{{ other_downloads_and_things }}/rustyhogs/zips/{{ musl_ankamali_hog_zip_url | regex_replace(_regex, _replace) }}"
+  vars:
+    _regex: '(https:\/\/github\.com\/\S+\/)(\S+\.zip)'
+    _replace: '\2'
+  register: ankamali_hog_stat
+
+- name: Check if ankamali_hog zip exists or download from GitHub if older than one week
+  ansible.builtin.include_tasks: rustyhogs-download-tasks/download-ankamali.yml
+  # `|float` is included in this comparison to typecast these variables as floats for the mathematical comparison with 604800.
+  # the 604800 value is the number of seconds in a week
+  when: (ankamali_hog_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - ankamali_hog_stat.stat.mtime|float) > 604800)
+
+- name: Check file attributes of the berkshire_hog_zip file
+  ansible.builtin.stat:
+    path: "{{ other_downloads_and_things }}/rustyhogs/zips/{{ musl_berkshire_hog_zip_url | regex_replace(_regex, _replace) }}"
+  vars:
+    _regex: '(https:\/\/github\.com\/\S+\/)(\S+\.zip)'
+    _replace: '\2'
+  register: berkshire_hog_stat
+
+- name: Check if berkshire_hog zip exists or download from GitHub if older than one week
+  ansible.builtin.include_tasks: rustyhogs-download-tasks/download-berkshire.yml
+  when: (berkshire_hog_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - berkshire_hog_stat.stat.mtime|float) > 604800)
+
+- name: Check file attributes of the choctaw_hog_zip file
+  ansible.builtin.stat:
+    path: "{{ other_downloads_and_things }}/rustyhogs/zips/{{ musl_choctaw_hog_zip_url | regex_replace(_regex, _replace) }}"
+  vars:
+    _regex: '(https:\/\/github\.com\/\S+\/)(\S+\.zip)'
+    _replace: '\2'
+  register: choctaw_hog_stat
+
+- name: Check if choctaw_hog zip exists or download from GitHub if older than one week
+  ansible.builtin.include_tasks: rustyhogs-download-tasks/download-choctaw.yml
+  when: (choctaw_hog_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - choctaw_hog_stat.stat.mtime|float) > 604800)
+
+- name: Check file attributes of the duroc_hog_zip file
+  ansible.builtin.stat:
+    path: "{{ other_downloads_and_things }}/rustyhogs/zips/{{ musl_duroc_hog_zip_url | regex_replace(_regex, _replace) }}"
+  vars:
+    _regex: '(https:\/\/github\.com\/\S+\/)(\S+\.zip)'
+    _replace: '\2'
+  register: duroc_hog_stat
+
+- name: Check if duroc_hog zip exists or download from GitHub if older than one week
+  ansible.builtin.include_tasks: rustyhogs-download-tasks/download-duroc.yml
+  when: (duroc_hog_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - duroc_hog_stat.stat.mtime|float) > 604800)
+
+- name: Check file attributes of the essex_hog_zip file
+  ansible.builtin.stat:
+    path: "{{ other_downloads_and_things }}/rustyhogs/zips/{{ musl_essex_hog_zip_url | regex_replace(_regex, _replace) }}"
+  vars:
+    _regex: '(https:\/\/github\.com\/\S+\/)(\S+\.zip)'
+    _replace: '\2'
+  register: essex_hog_stat
+
+- name: Check if essex_hog zip exists or download from GitHub if older than one week
+  ansible.builtin.include_tasks: rustyhogs-download-tasks/download-essex.yml
+  when: (essex_hog_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - essex_hog_stat.stat.mtime|float) > 604800)
+
+- name: Check file attributes of the gottingen_hog_zip file
+  ansible.builtin.stat:
+    path: "{{ other_downloads_and_things }}/rustyhogs/zips/{{ musl_gottingen_hog_zip_url | regex_replace(_regex, _replace) }}"
+  vars:
+    _regex: '(https:\/\/github\.com\/\S+\/)(\S+\.zip)'
+    _replace: '\2'
+  register: gottingen_hog_stat
+
+- name: Check if gottingen_hog zip exists or download from GitHub if older than one week
+  ansible.builtin.include_tasks: rustyhogs-download-tasks/download-gottingen.yml
+  when: (gottingen_hog_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - gottingen_hog_stat.stat.mtime|float) > 604800)
+
+- name: Check file attributes of the hante_hog_zip file
+  ansible.builtin.stat:
+    path: "{{ other_downloads_and_things }}/rustyhogs/zips/{{ musl_hante_hog_zip_url | regex_replace(_regex, _replace) }}"
+  vars:
+    _regex: '(https:\/\/github\.com\/\S+\/)(\S+\.zip)'
+    _replace: '\2'
+  register: hante_hog_stat
+
+- name: Check if hante_hog zip exists or download from GitHub if older than one week
+  ansible.builtin.include_tasks: rustyhogs-download-tasks/download-hante.yml
+  when: (hante_hog_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - hante_hog_stat.stat.mtime|float) > 604800)
+
+- name: Check file attributes of the rustyhogs_scripts_zip file
+  ansible.builtin.stat:
+    path: "{{ other_downloads_and_things }}/rustyhogs/zips/{{ rustyhogs_scripts_zip_url | regex_replace(_regex, _replace) }}"
+  vars:
+    _regex: '(https:\/\/github\.com\/\S+\/)(\S+\.zip)'
+    _replace: '\2'
+  register: rustyhogs_scripts_stat
+
+- name: Check if rustyhogs_scripts zip exists or download from GitHub if older than one week
+  ansible.builtin.include_tasks: rustyhogs-download-tasks/download-rustyhogs-scripts.yml
+  when: (rustyhogs_scripts_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - rustyhogs_scripts_stat.stat.mtime|float) > 604800)
