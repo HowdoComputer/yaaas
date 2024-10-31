@@ -11,9 +11,9 @@
     - name: Read packages for attack host
       command: "awk '{print $1}' vars/attack-host-packages.txt"
         # debugger: always
-        register: _packages
-        delegate_to: localhost
-        run_once: true
+      register: _packages
+      delegate_to: localhost
+      run_once: true
     - name: Install required packages
       become: yes
       package:
@@ -34,18 +34,18 @@
     - name: Read git repositories for attack host
       command: "awk '{print $1}' vars/attack-host-git-repositories.txt"
         # debugger: always
-        register: _git_repos
-        delegate_to: localhost
-        run_once: true
+      register: _git_repos
+      delegate_to: localhost
+      run_once: true
     - name: Clone git repos
-      git:
+      ansible.builtin.git:
         repo: "{{ _git_repos.stdout_lines }}"
         dest: ~/targets/tools
       with_items:
         - # repo url 1
         - # repo url 2
-        clone: yes
-        update: yes
+      clone: yes
+      update: yes
 
 # tldr -u needs to end up in here at some point
 # $(echo alias bat=batcat | tee -a ~/.bashrc)
