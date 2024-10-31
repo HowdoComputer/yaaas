@@ -56,6 +56,7 @@ attack_host_packages:
   - python3-ldapdomaindump
   - python3-pip
   - python3-pyasn1
+  - python3-scrapy
   - reconspider
   - redis-tools
   - remmina
