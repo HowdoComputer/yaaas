@@ -1,3 +1,4 @@
+# https://pkg.kali.org/pkg/linux
 attack_host_packages:
   - apt-transport-https
   - assetfinder
@@ -5,6 +6,7 @@ attack_host_packages:
   - btop
   - bloodhound
   - bloodhound.py
+  - cargo
   - chromium
   - cifs-utils
   - cisco7crack
@@ -36,6 +38,7 @@ attack_host_packages:
   # - modbusclient
   - nbtscan
   - neo4j
+  - netexec
   - nginx
   - nikto
   - nmap
@@ -43,9 +46,17 @@ attack_host_packages:
   - onesixtyone
   - openvpn
   - openssh-server
+  - oracle-instantclient-sqlplus
   - oscanner
+  - pacu
+  - pipx
   - powershell
+  - python3-flask
+  - python3-ldap3
+  - python3-ldapdomaindump
   - python3-pip
+  - python3-pyasn1
+  - reconspider
   - redis-tools
   - remmina
   - responder
@@ -60,6 +71,7 @@ attack_host_packages:
   - snmp-mibs-downloader
   - snmpcheck
   - snmpd
+  - sqlmap
   - ssh-audit
   - sshuttle
   - sshpass
@@ -67,7 +79,7 @@ attack_host_packages:
   - strace
   - subfinder
   - terminator
-  - tilix
+  # - tilix  # no longer included in Kali?
   - tldr
   - tmux
   - vim
