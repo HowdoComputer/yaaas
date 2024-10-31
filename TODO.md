@@ -17,11 +17,11 @@
 - [x] Set up variables which can be configured
   - [x] Directory locations. ~/targets/\[tools|c2\], for example
   - [x] Main user account
-- [ ] Add obfuscation tooling
+- [x] Add obfuscation tooling
   - [x] Docker.io installation
   - [x] Configure user account to be docker user. Same as "main" from above?
   - [x] pull pezor docker container
-  - [ ] Write note file with pezor start syntax
+  - [x] Write note file with pezor start syntax
 - [x] add sliver and sliver.wiki to GitHub list
 - [ ] Add `bat` alias for `batcat`
   - [ ] Implement this as part of per-user customization
@@ -37,7 +37,7 @@
 - [ ] Download and install sublime
 - [ ] Download and install vscodium
 ~~- [ ] Download and install poetry crackmapexec. Ugh.~~
-- [ ] Download and install pipx and netexec (nxc)
+- [x] Download and install pipx and netexec (nxc)
 - [ ] Download and install autorecon
 - [ ] Enable installation of pip packages
   - [ ] Install defaultcreds-cheat-sheet for each user account
@@ -67,15 +67,15 @@
 - [x] Add packages to packages.yml for attack box
 - [x] `btop`?
 - [x] `hollywood`?
-- [ ] Add github repos to git-repos.yml
+- [x] Add github repos to git-repos.yml
 - [ ] Solve installing `Autorecon`
   - [ ] Add AutoRecon.git to git repos
   - [ ] pip install requirements.txt
   - [ ] pip install AutoRecon dir
 - [ ] Binary downloads of:
-  - [ ] linpeas.sh
-  - [ ] winPEAS.bat
-  - [ ] winPEASany.exe
+  - [x] linpeas.sh
+  - [x] winPEAS.bat
+  - [x] winPEASany.exe
   - [ ] kerbrute_linux_amd64
   - [ ] kerbrute_linux_amd64.exe
   - [ ] pspy64
