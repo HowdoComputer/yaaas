@@ -53,8 +53,10 @@ attack_host_github_repo_list:
   - https://github.com/RUB-NDS/PRET.git
   - https://github.com/silent6trinity/pwnkit.git
   - https://github.com/skelsec/pypykatz.git
+  - https://github.com/codingo/Reconnoitre.git
   - https://github.com/n0b0dyCN/redis-rogue-server.git
   - https://github.com/BishopFox/rmiscout.git
+  - https://github.com/newrelic/rusty-hog.git
   - https://github.com/GhostPack/Seatbelt.git
   - https://github.com/rasta-mouse/SharpC2.git
   - https://github.com/Flangvik/SharpCollection.git
@@ -63,6 +65,7 @@ attack_host_github_repo_list:
   - https://github.com/cnotin/SplunkWhisperer2.git
   - https://github.com/ZephrFish/static-tools.git
   - https://github.com/insidetrust/statistically-likely-usernames.git
+  - https://github.com/drwetter/testssl.sh.git
   - https://github.com/urbanadventurer/username-anarchy.git
   - https://github.com/nccgroup/vlan-hopping.git
   - https://github.com/jeroennijhof/vncpwd.git
