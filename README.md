@@ -26,6 +26,12 @@ e.g.
 sudo apt install ansible
 ```
 
+If the full `ansible` package isn't available (like Kali, just pulled from their repos recently), install `ansible-core` and then add the `docker_image` module like so:
+
+```bash
+ansible-galaxy collection install community.docker
+```
+
 Add your hosts to ![hosts.ini](./hosts.ini) or ![hosts.yml](./hosts.yml). The ![ansible.cfg](./ansible.cfg) file in this repo assumes `hosts.yml` by default.
 
 Please also note that this repo uses `localhost` as an `attack_host` and a `c2_server` by default. See ![hosts.yml](./hosts.yml).
