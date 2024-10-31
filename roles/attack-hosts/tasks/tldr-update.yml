@@ -13,3 +13,5 @@
 
 - name: "Run tldr update with `tldr -u`"
   ansible.builtin.command: "tldr -u"
+  when: tldr_check
+  tags: tested
