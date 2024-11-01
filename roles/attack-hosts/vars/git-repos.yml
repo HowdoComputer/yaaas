@@ -54,6 +54,7 @@ attack_host_github_repo_list:
   - https://github.com/silent6trinity/pwnkit.git
   - https://github.com/skelsec/pypykatz.git
   - https://github.com/codingo/Reconnoitre.git
+  - https://github.com/HowdoComputer/ReconSpider-HTB.git
   - https://github.com/n0b0dyCN/redis-rogue-server.git
   - https://github.com/BishopFox/rmiscout.git
   - https://github.com/newrelic/rusty-hog.git
