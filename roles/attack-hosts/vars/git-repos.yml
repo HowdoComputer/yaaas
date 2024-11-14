@@ -48,6 +48,7 @@ attack_host_github_repo_list:
   - https://github.com/stealthsploit/Optimised-hashcat-Rule.git
   - https://github.com/swisskyrepo/PayloadsAllTheThings.git
   - https://github.com/Fincer/penetration-testing.git
+  - https://github.com/dirkjanm/PKINITtools.git
   - https://github.com/PowerShellMafia/PowerSploit.git
   - https://github.com/NetSPI/PowerUpSQL.git
   - https://github.com/RUB-NDS/PRET.git
