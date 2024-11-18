@@ -6,5 +6,5 @@
       - docker-doc
       # This was just pulled out of Debian testing and Kali rolling
       # Commenting it out for now.
-      #- docker-compose
+      - docker-compose
     state: latest
