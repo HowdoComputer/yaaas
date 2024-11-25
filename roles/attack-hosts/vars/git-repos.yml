@@ -30,6 +30,7 @@ attack_host_github_repo_list:
   - https://github.com/Kevin-Robertson/Inveigh.git
   - https://github.com/danielbohannon/Invoke-Obfuscation.git
   - https://github.com/p3nt4/Invoke-SocksProxy.git
+  - https://github.com/HowdoComputer/ippsec-pam-pw-logging.git
   - https://github.com/ohpe/juicy-potato.git
   - https://github.com/ropnop/kerbrute.git
   - https://github.com/sosdave/KeyTabExtract.git
