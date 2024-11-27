@@ -1,0 +1,50 @@
+- name: Pull the latest version number of RustScan
+  ansible.builtin.shell:
+    cmd: curl -s -o /dev/null -w "%{redirect_url}" https://github.com/rustscan/rustscan/releases/latest/download/rustscan | awk -F'/' '{print $(NF-1)}'
+    executable: /bin/zsh
+  register: rustscan_latest_version_output
+
+# Debug output
+#- name: Print the latest RustScan version number
+#  ansible.builtin.debug:
+#    msg: "The version number pulled is: {{ rustscan_latest_version_output.stdout }}"
+
+- name: Check installed RustScan version, pull version number
+  ansible.builtin.shell:
+    cmd: dpkg-query -W -f='${Version}' rustscan 2>/dev/null || echo "not_installed"
+  register: rustscan_installed_version_number
+  ignore_errors: true
+
+- name: Download latest RustScan deb
+  ansible.builtin.get_url:
+    url: "https://github.com/rustscan/rustscan/releases/latest/download/rustscan_{{ rustscan_latest_version_output.stdout }}_amd64.deb"
+    dest: "{{ other_downloads_and_things }}"
+    mode: '0644'
+    force: true
+  when: ( rustscan_installed_version_number.stdout == 'not_installed' ) or
+        ( rustscan_installed_version_number.stdout is version(rustscan_latest_version_output.stdout, '<') )
+  register: rustscan_download_result
+  ignore_errors: true
+
+# Debug output
+#- name: Debug, print registered rustscan_download_result data
+#  ansible.builtin.debug:
+#    var: rustscan_download_result
+#    verbosity: 0
+#
+#- name: Debug, print installed version number info
+#  ansible.builtin.debug:
+#    var: rustscan_installed_version_number
+#
+#- name: Debug, print latest version info
+#  ansible.builtin.debug:
+#    var: rustscan_latest_version_output
+
+- name: Install downloaded RustScan deb
+  become: true
+  ansible.builtin.apt:
+    deb: "{{ other_downloads_and_things }}/rustscan_{{ rustscan_latest_version_output.stdout }}_amd64.deb"
+  when: ( rustscan_download_result.changed == true and rustscan_installed_version_number.stdout == "not_installed" ) or
+        (( rustscan_download_result.size is defined ) and (
+        ( rustscan_installed_version_number.stdout == "not_installed" ) or 
+        ( rustscan_installed_version_number.stdout is version(rustscan_latest_version_output.stdout, '<') )))
