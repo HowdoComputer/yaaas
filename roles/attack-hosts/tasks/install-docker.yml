@@ -8,4 +8,4 @@
       # Commenting it out for now.
       - docker-compose
     state: latest
-    tags: tested
+  tags: tested
