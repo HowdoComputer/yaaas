@@ -60,7 +60,7 @@ TODO. Not yet implemented.
 Do all the things.
 
 ```bash
-ansible-playbook runMe.yml -i inventory/hosts.yaml
+ansible-playbook runMe.yml -i inventory/hosts.yml
 ```
 
 ## Other useful snippets
