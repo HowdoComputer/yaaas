@@ -7,6 +7,7 @@ attack_host_github_repo_list:
   - https://github.com/tomnomnom/assetfinder.git
   - https://github.com/hmaverickadams/autoNTDS.git
   - https://github.com/NickstaDB/BaRMIe.git
+  - https://github.com/Bashfuscator/Bashfuscator.git
   - https://github.com/SpecterOps/BloodHound.git
   - https://github.com/jpillora/chisel.git
   - https://github.com/galkan/crowbar.git
