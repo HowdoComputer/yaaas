@@ -15,6 +15,7 @@
   # `|float` is included in this comparison to typecast these variables as floats for the mathematical comparison with 604800.
   # the 604800 value is the number of seconds in a week
   when: (sliver_client_linux_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - sliver_client_linux_stat.stat.mtime|float) > 604800)
+  tags: tested
 
 # - name: Download sliver-client_linux from GitHub if it's missing or older than a week
   # ansible.builtin.get_url:

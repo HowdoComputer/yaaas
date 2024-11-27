@@ -3,6 +3,7 @@
     cmd: curl -s -o /dev/null -w "%{redirect_url}" https://github.com/rustscan/rustscan/releases/latest/download/rustscan | awk -F'/' '{print $(NF-1)}'
     executable: /bin/zsh
   register: rustscan_latest_version_output
+  tags: tested
 
 # Debug output
 #- name: Print the latest RustScan version number
@@ -14,6 +15,7 @@
     cmd: dpkg-query -W -f='${Version}' rustscan 2>/dev/null || echo "not_installed"
   register: rustscan_installed_version_number
   ignore_errors: true
+  tags: tested
 
 - name: Download latest RustScan deb
   ansible.builtin.get_url:
@@ -25,6 +27,7 @@
         ( rustscan_installed_version_number.stdout is version(rustscan_latest_version_output.stdout, '<') )
   register: rustscan_download_result
   ignore_errors: true
+  tags: tested
 
 # Debug output
 #- name: Debug, print registered rustscan_download_result data
@@ -48,3 +51,4 @@
         (( rustscan_download_result.size is defined ) and (
         ( rustscan_installed_version_number.stdout == "not_installed" ) or 
         ( rustscan_installed_version_number.stdout is version(rustscan_latest_version_output.stdout, '<') )))
+  tags: tested

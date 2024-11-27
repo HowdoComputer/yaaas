@@ -12,4 +12,4 @@
   vars:
     _regex: '(https:\/\/github\.com\/\S+\/)(\S+)(\.git)'
     _replace: '\2'
-  # tags: tested
+  tags: tested

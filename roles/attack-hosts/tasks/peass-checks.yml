@@ -3,7 +3,7 @@
   ansible.builtin.package:
     name: peass
     state: latest
-  # tags: tested
+  tags: tested
 
 - name: Check file attributes of the linpeas.sh file
   ansible.builtin.stat:
@@ -15,21 +15,26 @@
   # `|float` is included in this comparison to typecast these variables as floats for the mathematical comparison with 604800.
   # the 604800 value is the number of seconds in a week
   when: (linpeas_sh_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - linpeas_sh_stat.stat.mtime|float) > 604800)
+  tags: tested
 
 - name: Check file attributes of the winPEAS.bat file
   ansible.builtin.stat:
     path: "{{ windows_tool_download_path }}/winPEAS.bat"
   register: winpeas_bat_stat
+  tags: tested
 
 - name: Check if winpeas.bat exists or download from GitHub if older than one week
   ansible.builtin.include_tasks: download-winpeas-bat.yml
   when: (winpeas_bat_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - winpeas_bat_stat.stat.mtime|float) > 604800)
+  tags: tested
 
 - name: Check file attributes of the winPEASany.exe file
   ansible.builtin.stat:
     path: "{{ windows_tool_download_path }}/winPEASany.exe"
   register: winpeas_exe_stat
+  tags: tested
 
 - name: Check if winPEASany.exe exists or download from GitHub if older than one week
   ansible.builtin.include_tasks: download-winpeas-exe.yml
   when: (winpeas_exe_stat.stat.mtime is not defined) or ((ansible_date_time.epoch|float - winpeas_exe_stat.stat.mtime|float) > 604800)
+  tags: tested
