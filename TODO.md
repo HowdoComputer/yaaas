@@ -44,6 +44,10 @@
 - [ ] Enable installation of pipx packages
 - [ ] Add installation of `nxc` through pipx
 - [ ] Enable installation of pypi packages
+- [ ] Set up python virtual environments for certain projects
+  - [ ] pywhisker
+  - [ ] PKINIT
+  - [ ] targetedKerberoast
 - [ ] laZagne.exe binary download
 - [ ] Update nmap's script database? see kit2
 - [ ] Add silence_pcbeep function from kit2
