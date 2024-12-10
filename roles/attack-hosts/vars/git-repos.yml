@@ -28,7 +28,8 @@ attack_host_github_repo_list:
   - https://github.com/codewhitesec/HandleKatz.git
   - https://github.com/arnaudsoullie/ics-default-passwords.git
   - https://github.com/SecureAuthCorp/Impacket.git
-  - https://github.com/Kevin-Robertson/Inveigh.git
+  - https://github.com/Kevin-Robertson/Inveigh.git\
+  - https://github.com/danielbohannon/Invoke-DOSfuscation.git
   - https://github.com/danielbohannon/Invoke-Obfuscation.git
   - https://github.com/p3nt4/Invoke-SocksProxy.git
   - https://github.com/HowdoComputer/ippsec-pam-pw-logging.git
