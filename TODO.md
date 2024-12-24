@@ -58,6 +58,9 @@
 - [ ] update searchsploit: `sudo searchsploit -u`
 - [ ] `sudo updatedb` toward the end of the changes
 - [ ] Adjust tldr-update.yml so the update task won't halt playbook if it fails
+- [ ] Add [`conpass` password-policy-compliant brute forcer](https://github.com/login-securite/conpass) to installed packages
+  - Will require installation with `pip` or `pipx`, perhaps
+- [ ] Add `sstimap` burpsuite extension?
 
 ## WSL compatibility
 - [ ] Troubleshoot / fix installing docker in WSL, if possible.
