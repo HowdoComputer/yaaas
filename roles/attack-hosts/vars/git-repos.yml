@@ -13,6 +13,7 @@ attack_host_github_repo_list:
   - https://github.com/galkan/crowbar.git
   - https://github.com/cube0x0/CVE-2021-1675.git
   - https://github.com/arthepsy/CVE-2021-4034.git
+  - https://github.com/jakabakos/CVE-2023-26360-adobe-coldfusion-rce-exploit.git
   - https://github.com/NetSPI/DAFT.git
   - https://github.com/ihebski/DefaultCreds-cheat-sheet.git
   - https://github.com/iagox86/dnscat2.git
