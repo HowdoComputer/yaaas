@@ -4,6 +4,7 @@ attack_host_packages:
   - assetfinder
   - bat
   - beef-xss
+  - bettercap
   - btop
   - bloodhound
   - bloodhound.py
