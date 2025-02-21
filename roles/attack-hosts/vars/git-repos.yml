@@ -51,6 +51,8 @@ attack_host_github_repo_list:
   - https://github.com/Ridter/noPac.git
   - https://github.com/stealthsploit/OneRuleToRuleThemStill.git
   - https://github.com/stealthsploit/Optimised-hashcat-Rule.git
+  - https://github.com/lanjelot/patator.git
+  - https://github.com/lanjelot/patator.wiki
   - https://github.com/swisskyrepo/PayloadsAllTheThings.git
   - https://github.com/Fincer/penetration-testing.git
   - https://github.com/dirkjanm/PKINITtools.git
