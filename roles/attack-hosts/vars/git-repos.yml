@@ -23,6 +23,7 @@ attack_host_github_repo_list:
   - https://github.com/0v3rride/Enum4LinuxPy.git
   - https://github.com/HackPlayers/evil-winrm.git
   - https://github.com/unode/firefox_decrypt.git
+  - https://github.com/n00py/GetFGPP.git
   - https://github.com/r3motecontrol/Ghostpack-CompiledBinaries.git
   - https://github.com/BeichenDream/GodPotato.git
   - https://github.com/EspressoCake/HandleKatz_BOF.git
