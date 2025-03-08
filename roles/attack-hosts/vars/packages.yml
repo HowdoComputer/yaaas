@@ -20,6 +20,7 @@ attack_host_packages:
   - enum4linux
   - enum4linux-ng
   - exploitdb
+  - eyewitness
   - feroxbuster
   - ffuf
   - finalrecon
