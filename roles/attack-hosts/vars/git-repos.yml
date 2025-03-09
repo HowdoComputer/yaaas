@@ -69,6 +69,7 @@ attack_host_github_repo_list:
   - https://github.com/HowdoComputer/ReconSpider-HTB.git
   - https://github.com/n0b0dyCN/redis-rogue-server.git
   - https://github.com/BishopFox/rmiscout.git
+  - https://github.com/g0h4n/RustHound-CE.git
   - https://github.com/newrelic/rusty-hog.git
   - https://github.com/GhostPack/Seatbelt.git
   - https://github.com/Friends-Security/ShadowHound.git
