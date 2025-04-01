@@ -40,7 +40,7 @@ attack_host_github_repo_list:
   - https://github.com/sosdave/KeyTabExtract.git
   - https://github.com/AlessandroZ/LaZagne.git
   - https://github.com/evilsocket/legba.git
-  - https://github.com/evilsocket/legba/wiki.git
+  - https://github.com/evilsocket/legba.wiki.git
   - https://github.com/rebootuser/LinEnum.git
   - https://github.com/TsukiCTF/Lovely-Potato.git
   - https://github.com/darkoperator/Metasploit-Plugins.git
