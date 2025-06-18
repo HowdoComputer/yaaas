@@ -17,6 +17,7 @@ attack_host_packages:
   - curl
   - crunch
   - dnsrecon
+  - du-dust
   - enum4linux
   - enum4linux-ng
   - exploitdb
@@ -25,7 +26,7 @@ attack_host_packages:
   - ffuf
   - finalrecon
   - fping
-  - freerdp2-x11
+  - freerdp3-x11
   - git
   - gobuster
   - golang-go
@@ -49,6 +50,7 @@ attack_host_packages:
   - nginx
   - nikto
   - nmap
+  - nuclei
   - odat
   - onesixtyone
   - openvpn
@@ -87,9 +89,10 @@ attack_host_packages:
   - sslscan
   - strace
   - subfinder
+  - tealdeer   # tldr client
   - terminator
   # - tilix  # no longer included in Kali?
-  - tldr
+  # - tldr   # no longer in Kali
   - tmux
   - trufflehog
   - vim
