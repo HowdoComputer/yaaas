@@ -63,8 +63,8 @@
 - name: Check for and download Rusty Hogs tooling
   ansible.builtin.include_tasks: rusty-hogs-checks.yml
 
-- name: Check for and update RustScan install
-  ansible.builtin.include_tasks: install-rustscan.yml
+# - name: Check for and update RustScan install
+#   ansible.builtin.include_tasks: install-rustscan.yml
 
 # https://www.digitalocean.com/community/tutorials/how-to-use-ansible-to-install-and-set-up-docker-on-ubuntu-20-04
 # - name: Install docker.io and related packages
