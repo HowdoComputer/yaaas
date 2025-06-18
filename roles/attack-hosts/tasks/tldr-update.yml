@@ -11,7 +11,7 @@
 #     msg: "tealdeer is installed"
 #   when: tldr_check is succeeded
 
-- name: "Run tealdeer update with `tldr -u`"
-  ansible.builtin.command: "tldr -u"
-  when: tldr_check
-  tags: tested
+# - name: "Run tealdeer update with `tldr -u`"
+#   ansible.builtin.command: "tldr -u"
+#   when: tldr_check
+#   tags: tested
