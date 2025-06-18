@@ -6,10 +6,10 @@
   check_mode: true
   register: tldr_check
 
-- name: "Print tldr check results"
-  ansible.builtin.debug:
-    msg: "tealdeer is installed"
-  when: tldr_check is succeeded
+# - name: "Print tldr check results"
+#   ansible.builtin.debug:
+#     msg: "tealdeer is installed"
+#   when: tldr_check is succeeded
 
 - name: "Run tealdeer update with `tldr -u`"
   ansible.builtin.command: "tldr -u"
