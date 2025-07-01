@@ -1,0 +1,106 @@
+attack_host_packages:
+  - apt-transport-https
+  - assetfinder
+  - bat
+  - beef-xss
+  - bettercap
+  - btop
+  - bloodhound
+  - bloodhound.py
+  - cargo
+  # - certipy-ad
+  - chromium
+  - cifs-utils
+  - cisco7crack
+  # - crackmapexec
+  - curl
+  - crunch
+  - dnsrecon
+  # - du-dust
+  - enum4linux
+  - enum4linux-ng
+  - exploitdb
+  - eyewitness
+  # - feroxbuster
+  - ffuf
+  # - finalrecon
+  - fping
+  - freerdp3-x11
+  - git
+  - gobuster
+  - golang-go
+  - html2text
+  - htop
+  - hollywood
+  - ipcalc
+  - ipcalc-ng
+  - ipmitool
+  - jq
+  - jxplorer
+  - krb5-user
+  - lsd
+  - metasploit-framework
+  - mingw-w64
+  # - modbusclient
+  # - mssqlpwner
+  - nbtscan
+  - neo4j
+  - netexec
+  - nginx
+  - nikto
+  - nmap
+  - nuclei
+  - odat
+  - onesixtyone
+  - openvpn
+  - openssh-server
+  - oracle-instantclient-sqlplus
+  - oscanner
+  # - pacu
+  - pipx
+  - powershell
+  - python3-flask
+  - python3-ldap3
+  - python3-ldapdomaindump
+  - python3-pip
+  - python3-pyasn1
+  - python3-scrapy
+  - rdate
+  # - reconspider
+  - redis-tools
+  - remmina
+  - responder
+  - rlwrap
+  - rpm2cpio
+  - samba
+  - seclists
+  - smbclient
+  - smbmap
+  - smtp-user-enum
+  - snmp
+  - snmp-mibs-downloader
+  - snmpcheck
+  - snmpd
+  - sqlmap
+  - ssh-audit
+  - sshuttle
+  - sshpass
+  - sslscan
+  - strace
+  # - subfinder
+  - tealdeer   # tldr client
+  - terminator
+  # - tilix  # no longer included in Kali?
+  # - tldr   # no longer in Kali
+  - tmux
+  - trufflehog
+  - vim
+  - w3m
+  - whatweb
+  - wfuzz
+  - wordlists
+  - xrdp
+  - xxd
+  - yersinia
+  - zaproxy
+  - zenity
