@@ -94,3 +94,4 @@ attack_host_github_repo_list:
   - https://github.com/helviojunior/sprayshark.git
   - https://github.com/egre55/gcp-permissions-checker.git
   - https://github.com/pwnedlabs/google-workspace-enum.git
+  - https://github.com/BishopFox/cloudfox.git
