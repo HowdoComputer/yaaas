@@ -18,6 +18,7 @@ attack_host_packages:
   - crunch
   - dnsrecon
   - du-dust
+  - duf
   - enum4linux
   - enum4linux-ng
   - exploitdb
