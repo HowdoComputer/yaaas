@@ -10,6 +10,8 @@ attack_host_packages:
   - bloodhound.py
   - cargo
   - certipy-ad
+  - chisel
+  - chisel-common-binaries
   - chromium
   - cifs-utils
   - cisco7crack
