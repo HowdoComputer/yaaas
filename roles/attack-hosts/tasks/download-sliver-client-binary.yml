@@ -1,6 +1,6 @@
 - name: Download sliver-client_linux from GitHub
   ansible.builtin.get_url:
-    url: "https://github.com/BishopFox/sliver/releases/latest/download/sliver-client_linux"
+    url: "https://github.com/BishopFox/sliver/releases/latest/download/sliver-client_linux-amd64"
     dest: "{{ c2_framework_download_path }}/"
     mode: '0755'
     force: true
